@@ -1,0 +1,8 @@
+---
+ - hosts: all
+   user: root
+   become: yes
+   become_method: sudo
+   tasks:
+   - name: 1.update the system
+     yum: name=docker state=present
