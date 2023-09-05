@@ -1,0 +1,14 @@
+---
+ - hosts: all
+   user: root
+   become: yes
+   become_method: sudo
+   tasks:
+   - name: 1. update the system
+     yum: name=docker state=present
+   - name: 2. restart service
+     service: name=docker state=restarted
+   - name: 3. create user
+     user: name=saurav password=124456
+   - name: 4. create group
+     group: name=marketing
