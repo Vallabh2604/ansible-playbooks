@@ -1,0 +1,8 @@
+---
+  - hosts: all
+    become: true
+    become_method: sudo
+    tasks:
+    - name: install git on ubuntu machine
+      yum: name=httpd state=latest
+      when: ansible_os_family == "ubuntu"
