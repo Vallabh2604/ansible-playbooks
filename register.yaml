@@ -1,0 +1,11 @@
+---
+  - hosts: localhost
+    become: true
+    become_method: sudo
+    tasks:
+    - name: list the contents of the folder
+      command: ls /root
+      register: output
+    - name: display the content
+      debug:
+       msg: "{{ output }}"
