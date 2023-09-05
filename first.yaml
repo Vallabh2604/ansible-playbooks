@@ -1,0 +1,8 @@
+---
+- hosts: all
+  vars:
+   test: "we are under besant technologies to learn devops"
+  tasks:
+  - name: we are testing the variable example
+    debug:
+      msg: "{{ test }}"
