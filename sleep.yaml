@@ -1,0 +1,11 @@
+---
+  - hosts: all
+    user: root
+    become: sudo
+    become_method: yes
+    gather_facts: false
+    tasks:
+    - name: sleep for 30 seconds
+      command: sleep 30
+      async: 40
+      poll: 15
